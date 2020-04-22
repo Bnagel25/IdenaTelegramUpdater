@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "idenaTelegramUpdater"
+version = "0.1.0"
+description = "VPS Idena Telegram Bot"
+authors = ["Ben Nagel <bnagel25@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+attrs = "^19.3.0"
+treq = "^20.4.1"
+Twisted = "^20.3.0"
+python-telegram-bot = "^12.6.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pylint = "^2.4.4"
+tox = "^3.14.3"
+pytest-twisted = "^1.12"
+black = "^19.10b0"
+wheel = "^0.34.2"
+
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

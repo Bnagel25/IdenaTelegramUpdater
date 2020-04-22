@@ -1,0 +1,15 @@
+dist
+build
+*egg*
+*.pyc
+run_testing
+_trial_temp
+.tox
+
+htmlcov/
+
+.coverage
+
+.mypy_cache/3.7/unittest/
+
+.mypy_cache/3.7/
