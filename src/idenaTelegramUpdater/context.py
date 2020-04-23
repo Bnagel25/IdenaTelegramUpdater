@@ -55,8 +55,8 @@ class Config:
 
     nodeAddress = attr.ib(default="", validator=[validate_address])
     nodeApiKey = attr.ib(default="", validator=attr.validators.instance_of(str))
-    nodeHost = attr.ib(default="", validator=attr.validators.instance_of(str))
-    nodePort = attr.ib(default="", validator=[validate_node_port])
+    nodeHost = attr.ib(default="localhost", validator=attr.validators.instance_of(str))
+    nodePort = attr.ib(default="9009", validator=[validate_node_port])
     telegramToken = attr.ib(default="", validator=attr.validators.instance_of(str))
     telegramChatId = attr.ib(default="", validator=attr.validators.instance_of(str))
     alertTimes = attr.ib(default=[], validator=[validate_alert_times])
