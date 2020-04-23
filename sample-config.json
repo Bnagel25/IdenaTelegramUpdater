@@ -1,0 +1,10 @@
+{
+    "nodeAddress": "",
+    "nodeApiKey": "",
+    "nodeHost": "localhost",
+    "nodePort": "9009",
+    "telegramToken": "",
+    "telegramChatId": "",
+    "alertTimes": [],
+    "alertForEpoch": true
+}
