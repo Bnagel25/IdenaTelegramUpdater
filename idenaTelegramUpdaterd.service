@@ -1,0 +1,14 @@
+[Unit]
+Description=Idena Telegram Updating Daemon
+
+
+[Service]
+User=root
+Type=simple
+WorkingDirectory=/home
+TimeoutStartSec=120
+Restart=on-failure
+ExecStart= /usr/bin/python3 -m idenaTelegramUpdater.main
+
+[Install]
+RequiredBy=multi-user.target
