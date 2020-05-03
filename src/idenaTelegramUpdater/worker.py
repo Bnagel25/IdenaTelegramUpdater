@@ -49,6 +49,7 @@ class Worker:
             time_today = datetime(now.year, now.month, now.day, alert.hour, alert.minute, alert.second)
             time_until = int((time_today - now).total_seconds())
             if time_until > 0:
+                logger.info("Loading {} today".format(aT))
                 self._alerts.append(aT)
                 self.ctx.reactor.callLater(time_until, self, aT)
 
@@ -63,17 +64,18 @@ class Worker:
         self._alerts = []
         now = datetime.utcnow()
         for aT in self.ctx.config.alertTimes:
-            alertTime = datetime.strptime(aT, context.TIME_FORMAT)
+            alert = datetime.strptime(aT, context.TIME_FORMAT)
             time_tomorrow = datetime(
                 now.year,
                 now.month,
                 now.day,
-                alertTime.hour,
-                alertTime.minute,
-                alertTime.second
+                alert.hour,
+                alert.minute,
+                alert.second
             ) + timedelta(days=1)
             time_until = int((time_tomorrow - now).total_seconds())
             if time_until > 0:
+                logger.info("Loading {} tomorrow".format(aT))
                 self._alerts.append(aT)
                 self.ctx.reactor.callLater(time_until, self, aT)
 
@@ -142,7 +144,8 @@ class Worker:
         """ Call balance and send a telegram-message """
         self._alerts.remove(time)
         if len(self._alerts) == 0:
-            self.loadTomorrow()
+            logger.info("Reloading Tomorrow")
+            self.load_tomorrow()
 
         d = self._idena.balance()
         d.addCallbacks(self._balance_cb, self._balance_err)
