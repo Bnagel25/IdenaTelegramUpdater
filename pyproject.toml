@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "idenaTelegramUpdater"
-version = "0.1.0"
+version = "0.1.1"
 description = "VPS Idena Telegram Bot"
 authors = ["Ben Nagel <bnagel25@gmail.com>"]
 
