@@ -8,7 +8,7 @@ authors = ["Ben Nagel <bnagel25@gmail.com>"]
 python = "^3.7"
 attrs = "^19.3.0"
 treq = "^20.4.1"
-Twisted = "^20.3.0"
+Twisted = "^22.4.0"
 python-telegram-bot = "^12.6.1"
 
 [tool.poetry.dev-dependencies]
